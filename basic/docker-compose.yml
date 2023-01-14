@@ -42,7 +42,7 @@ services:
 
   datadog-agent:
     container_name: datadog-agent
-    build: ./dd_config_files/
+    image: datadog/agent:latest
     environment:
       ## GLOBALS
     - DD_API_KEY=${DD_API_KEY}
