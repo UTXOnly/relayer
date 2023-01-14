@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.7"
 services:
 
   relay:
@@ -7,7 +7,7 @@ services:
       dockerfile: ./basic/Dockerfile
     environment:
       PORT: 2700
-      POSTGRESQL_DATABASE: postgres://nostr:nostr@postgres:5432/nostr?sslmode=disable
+      POSTGRESQL_DATABASE: postgres://nostr:nostr@postgres:5432/nostr
     depends_on:
       postgres:
         condition: service_healthy
