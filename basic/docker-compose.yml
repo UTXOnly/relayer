@@ -14,9 +14,9 @@ services:
     ports:
       - 8008:8008
     command: "./basic/relayer-basic"
-    networks:
-      default:
-        ipv4_address: 10.10.10.2
+##    networks:
+##      default:
+##        ipv4_address: 10.10.10.2
 
   postgres:
     image: postgres
@@ -27,7 +27,7 @@ services:
       POSTGRES_PASSWORD: nostr
       POSTGRES_HOST_AUTH_METHOD: trust # allow all connections without a password. This is *not* recommended for prod
     ports:
-      - 5432
+      - 5432:5432
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U nostr"] # database username here - nostr, should be changed if other user
       interval: 10s
@@ -36,9 +36,9 @@ services:
     volumes:
     - ../postgresql.conf:/postgresql.conf
     command: postgres -c 'config_file=/postgresql.conf'
-    networks:
-      default:
-        ipv4_address: 10.10.10.3
+##    networks:
+##      default:
+##        ipv4_address: 10.10.10.3
 
   datadog-agent:
     container_name: datadog-agent
@@ -72,14 +72,14 @@ services:
     - CHOWN
     security_opt:
     - apparmor:unconfined
-    networks:
-      default:
-        ipv4_address: 10.10.10.5
-        
-networks:
-  default:
-    name: nostr-ts-relay
-    ipam:
-      driver: default
-      config:
-        - subnet: 10.10.10.0/24
+#    networks:
+#      default:
+#        ipv4_address: 10.10.10.5
+#        
+#networks:
+#  default:
+#    name: nostr-ts-relay
+#    ipam:
+#      driver: default
+#      config:
+#        - subnet: 10.10.10.0/24
