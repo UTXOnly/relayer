@@ -74,7 +74,7 @@ services:
     - apparmor:unconfined
     networks:
       default:
-        ipv4_address: 10.10.10.3
+        ipv4_address: 10.10.10.5
         
 networks:
   default:
