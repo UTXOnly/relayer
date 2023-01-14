@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/fiatjaf/relayer"
+	"github.com/UTXOnly/relayer"
 	"github.com/fiatjaf/relayer/storage/postgresql"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/nbd-wtf/go-nostr"
