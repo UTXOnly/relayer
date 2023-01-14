@@ -1,6 +1,6 @@
 module github.com/UTXOnly/relayer
 
-go 1.19
+go 1.16
 
 require (
 	github.com/PuerkitoBio/goquery v1.8.0
@@ -18,7 +18,6 @@ require (
 	github.com/rs/cors v1.7.0
 	github.com/stevelacy/daz v0.1.4
 	github.com/tidwall/gjson v1.14.1
-	golang.org/x/sys v0.4.0
 )
 
 require (
@@ -77,7 +76,6 @@ require (
 	golang.org/x/crypto v0.0.0-20210921155107-089bfa567519 // indirect
 	golang.org/x/exp v0.0.0-20221106115401-f9659909a136 // indirect
 	golang.org/x/net v0.0.0-20211015210444-4f30a5c0130f // indirect
-	golang.org/x/sys v0.4.0 // indirect
 	golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1 // indirect
 	golang.org/x/text v0.3.7 // indirect
 )
