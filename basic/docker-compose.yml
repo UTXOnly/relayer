@@ -40,7 +40,7 @@ services:
       default:
         ipv4_address: 10.10.10.3
 
-datadog-agent:
+  datadog-agent:
     container_name: datadog-agent
     build: ./dd_config_files/
     environment:
