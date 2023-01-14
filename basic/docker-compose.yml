@@ -12,7 +12,7 @@ services:
       postgres:
         condition: service_healthy
     ports:
-      - 2700:2700
+      - 8008:2700
     command: "./basic/relayer-basic"
 
   postgres:
