@@ -7,7 +7,7 @@ services:
       dockerfile: ./basic/Dockerfile
     environment:
       PORT: 2700
-      POSTGRESQL_DATABASE: postgres://nostr:nostr@postgres:5432/nostr
+      POSTGRESQL_DATABASE: postgres://nostr:nostr@postgres:5432/nostr?sslmode=disable
     depends_on:
       - postgres
         #condition: service_healthy
@@ -40,7 +40,7 @@ services:
       default:
         ipv4_address: 10.10.10.3
         
- networks:
+networks:
   default:
     name: nostr-ts-relay
     ipam:
