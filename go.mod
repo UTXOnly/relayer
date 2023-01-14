@@ -18,6 +18,7 @@ require (
 	github.com/rs/cors v1.7.0
 	github.com/stevelacy/daz v0.1.4
 	github.com/tidwall/gjson v1.14.1
+	golang.org/x/sys v0.4.0
 )
 
 require (
