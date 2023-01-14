@@ -10,7 +10,7 @@ services:
       POSTGRESQL_DATABASE: postgres://nostr:nostr@postgres:5432/nostr
     depends_on:
       - postgres
-        condition: service_healthy
+        #condition: service_healthy
     ports:
       - 8008:2700
     command: "./basic/relayer-basic"
