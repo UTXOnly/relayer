@@ -47,18 +47,19 @@ datadog-agent:
       ## GLOBALS
     - DD_API_KEY=${DD_API_KEY}
     - DD_SITE=datadoghq.com
-    - DD_HOSTNAME=brian.snmp.sandbox.docker
-    - DD_TAGS=env:sandbox owner:brian
+    - DD_HOSTNAME=GO_relay
+    - DD_TAGS=env:nostr-sandbox owner:brian
     - DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true
     - DD_DOCKER_LABELS_AS_TAGS=true
     - DD_DOCKER_ENV_AS_TAGS=true
     - DD_SYSTEM_PROBE_ENABLED=true
     - DD_PROCESS_AGENT_ENABLED=true
+    - DD_LOGS_ENABLED=true
+    - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock:ro
     - /proc/:/host/proc/:ro
     - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
-    - ./tcpdump/:/tcpdumps/
     - /sys/kernel/debug:/sys/kernel/debug
     cap_add:
     - SYS_ADMIN
