@@ -6,9 +6,9 @@ services:
       context: ../
       dockerfile: ./basic/Dockerfile
     environment:
-      PORT: 2700
-      POSTGRESQL_DATABASE: postgres://nostr:nostr@postgres:5432/nostr?sslmode=disable
-      GODEBUG: gcstackbarrieroff=1 
+      - PORT=2700
+      - POSTGRESQL_DATABASE=postgres://nostr:nostr@postgres:5432/nostr?sslmode=disable
+      - GODEBUG=gcstackbarrieroff=1 
     depends_on:
       postgres:
         condition: service_healthy
