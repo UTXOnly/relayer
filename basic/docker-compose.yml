@@ -43,6 +43,8 @@ services:
   datadog-agent:
     container_name: datadog-agent
     image: datadog/agent:latest
+    depends_on:
+      - relay
     environment:
       ## GLOBALS
     - DD_API_KEY=${DD_API_KEY}
