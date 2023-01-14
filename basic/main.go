@@ -22,9 +22,18 @@ func (r *Relay) Name() string {
 	return "BasicRelay"
 }
 
+//func (r *Relay) Storage() relayer.Storage {
+//	return r.storage
+//}
+
 func (r *Relay) Storage() relayer.Storage {
-	return r.storage
+    if r.storage == nil {
+        // handle the error or panic
+        panic("storage property is not initialized")
+    }
+    return r.storage
 }
+
 
 func (r *Relay) OnInitialized(*relayer.Server) {}
 
