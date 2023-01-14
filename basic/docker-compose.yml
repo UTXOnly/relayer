@@ -6,13 +6,13 @@ services:
       context: ../
       dockerfile: ./basic/Dockerfile
     environment:
-      PORT: 2700
+      PORT: 8008
       POSTGRESQL_DATABASE: postgres://nostr:nostr@postgres:5432/nostr?sslmode=disable
     depends_on:
       postgres:
         condition: service_healthy
     ports:
-      - 8008:2700
+      - 8008:8008
     command: "./basic/relayer-basic"
     networks:
       default:
