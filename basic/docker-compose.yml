@@ -14,6 +14,9 @@ services:
     ports:
       - 8008:2700
     command: "./basic/relayer-basic"
+    networks:
+      default:
+        ipv4_address: 10.10.10.2
 
   postgres:
     image: postgres
@@ -33,3 +36,14 @@ services:
     volumes:
     - ../postgresql.conf:/postgresql.conf
     command: postgres -c 'config_file=/postgresql.conf'
+    networks:
+      default:
+        ipv4_address: 10.10.10.3
+        
+ networks:
+  default:
+    name: nostr-ts-relay
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.10.10.0/24
