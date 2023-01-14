@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/UTXOnly/relayer"
-	"github.com/UTXOnly/storage/postgresql"
+	"github.com/fiatjaff/storage/postgresql"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/nbd-wtf/go-nostr"
 )
