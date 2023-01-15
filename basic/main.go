@@ -10,7 +10,15 @@ import (
 	"github.com/UTXOnly/relayer/storage/postgresql"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/nbd-wtf/go-nostr"
+	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
 )
+
+
+
+func main() {
+    tracer.Start(tracer.WithAgentAddr("datadog-agent:8126"))
+    defer tracer.Stop()
+}
 
 type Relay struct {
 	PostgresDatabase string `envconfig:"POSTGRESQL_DATABASE"`
