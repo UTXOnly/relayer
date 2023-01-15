@@ -14,12 +14,6 @@ import (
 )
 
 
-
-func main() {
-    tracer.Start(tracer.WithAgentAddr("datadog-agent:8126"))
-    defer tracer.Stop()
-}
-
 type Relay struct {
 	PostgresDatabase string `envconfig:"POSTGRESQL_DATABASE"`
 
@@ -87,6 +81,8 @@ func (r *Relay) AfterSave(evt *nostr.Event) {
 }
 
 func main() {
+	tracer.Start(tracer.WithAgentAddr("datadog-agent:8126"))
+    defer tracer.Stop()
 	r := Relay{}
 	if err := envconfig.Process("", &r); err != nil {
 		log.Fatalf("failed to read from env: %v", err)
